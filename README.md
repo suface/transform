@@ -36,7 +36,7 @@
 <br /> 
 
 ###  var i=10;
- properties为 json 类型 \<h2\><br /> 
+ properties为 json 类型 <h2\><br /> 
     var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
 
   
@@ -92,6 +92,6 @@
 	transform(that, keyframes,600,'ease',1000*i)<br /> 
 	transform(that, keyframes,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;}) ;<br /> 
 	transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},1020*i) ;<br /> 
-	transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},-20*i) ; //css3 animation-delay 支持负数 直接进入到时间点<br/> 
-<br/> 
+	transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},-20*i) ; //css3 animation-delay 支持负数 直接进入到时间点
+<br /> 
 
