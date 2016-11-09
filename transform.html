@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>透明度一起的 多物体同步 运动 json </title>
+<meta name="viewport"   content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"  />
+
+</head>
+
+<body style="height:1500px;">
+<style>
+*{ margin:0; padding:0;}
+ul,li{ list-style:none; margin:0; padding:0;}
+
+html{-webkit-touch-callout:none;-webkit-user-select:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent; font-size:62.5%; }
+body{ font-size:14px;}
+
+
+   
+.first_box{ width:88%; height:auto; overflow:hidden; border:2px solid red; margin:0 auto; padding:10px 0;}
+.first_box p{text-align:center; padding:10px; background:#eee; margin-bottom:10px;}
+.first_box div{ width:80px; height:80px; background:#6C6; margin-bottom:10px; position:relative; left:0; backface-visibility:hidden; 
+-webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+
+
+@-webkit-keyframes keyframesName{
+    0%{ -webkit-transform:translateX(0)}
+    100%{-webkit-transform:translateX(180px); opacity: .3 }
+} 
+@keyframes keyframesName{
+    0%{ transform:translateX(0)}
+    100%{transform:translateX(180px) ;opacity: .3}
+}
+
+</style>
+      
+<div id="j_first_box" class="first_box">
+  <p >click me</p>
+  <div class="j_first_box_one" style="background:red">11 </div>
+  <div class="j_first_box_one" style="width:120px; background:#FF0">22 </div>
+  <div class="j_first_box_one"> 333  </div>
+</div>
+    
+ <script src="mytransform.js"></script>    
+<script>
+ 
+      var j_first_box=document.getElementById("j_first_box");
+      var boxdiv=j_first_box.getElementsByTagName("div");
+      j_first_box.onclick=function(e){
+          
+           for(var i=0;i<boxdiv.length;i++){
+                     var that=boxdiv[i];
+             // transform(that,{ translate3d:'220px,10px,0',left:'1em',opacity:0.2,perspective:'400px', width:'200px', rotateY:'30deg'},800,'cubic-bezier(0.15, 0.5, 0.25, 1.0)',function(){
+                //  this.innerHTML='结束回调'+this.innerHTML;
+            // },1000*i);
+                         
+                         
+                    /*   properties json(css3 属性)  或者 string(css3动画名称)
+                      * transform(elem, properties)
+                      * transform(elem, properties, ease)
+                      * transform(elem, properties, ease, delay)
+                      * transform(elem, properties, ease, callback, delay)
+                      * transform(elem, properties, callback)
+                      * transform(elem, properties, callback, delay)
+                      * transform(elem, properties, duration )
+                      * transform(elem, properties, duration, ease)
+                      * transform(elem, properties, duration, delay)
+                      * transform(elem, properties, duration, callback)
+                      * transform(elem, properties, duration, callback,delay)  
+                      * transform(elem, properties, duration, ease, delay)
+                      * transform(elem, properties, duration, ease, callback)  
+                      * transform(elem, properties, duration, ease, callback,delay)
+                     */
+                      
+                     //测试 properties为 keyframes
+                     var keyframes='keyframesName';
+                     //transform(that, keyframes)
+                     //transform(that, keyframes,'ease')
+                     //transform(that, keyframes,'ease',1000*i)
+                     transform(that, keyframes,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i)
+                     
+                    //transform(that, keyframes,function(){ this.innerHTML='结束回调'+this.innerHTML;})
+                    //transform(that, keyframes,function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i)
+                     
+                    //transform(that, keyframes,600) 
+                    //transform(that, keyframes,600,ease')
+                    //transform(that, keyframes,600,1000*i) ;
+                    //transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;}) ; 
+                    //transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i) ;
+                     
+                    //transform(that, keyframes,600,'ease',1000*i)
+                    // transform(that, keyframes,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;}) ;
+                    // transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},1020*i) ;
+                    // transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},-20*i) ; //css3 animation-delay 支持负数 直接进入到时间点
+                     
+                     //测试 properties为 Json
+                     var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
+                     //transform(that,json);
+                      // transform(that, json,'ease')
+                     //transform(that, json,'ease',1000*i)
+                     //transform(that, json,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i)
+                     
+                    //transform(that, json,function(){ this.innerHTML='结束回调'+this.innerHTML;})
+                    //transform(that, json,function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i)
+                     
+                    //transform(that, json,600) 
+                    //transform(that, json,600,'ease')
+                    //transform(that, json,600,1000*i) ;
+                    //transform(that, json,600,function(){ this.innerHTML='结束回调'+this.innerHTML;}) ; 
+                    // transform(that, json,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i) ;
+                     
+                    //transform(that, json,600,'ease',1000*i)
+                    //transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;}) ;
+                    //transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i) ;
+                    //transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},-100*i) ; ////css3 transition-delay 支持负数 直接进入到时间点
+                     
+                        
+            } //for end
+          
+  }            
+</script>
+
+
+
+ 
+ <!--2 简单的调用实例-->
+ <style>	
+.flexbox{display: -webkit-box; display: -moz-box;display:box;display: -webkit-flex; display: -ms-flexbox; display: flex; }
+.flexbox .flex1{-webkit-box-flex: 1; -moz-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
+
+
+.nav {width: 300px;height: 40px;margin: 0 auto;margin-top: 30PX;position:relative;;background: #eee; }
+.nav li { line-height:40px;width: 25%;text-align: center;}
+.nav  div{ position:absolute; left:0; bottom:0; width:25%; height:2px; background:red; z-index:3;}
+.content {width: 300px;height: 300px;margin: 10px auto;border: 1px solid #F90;position: relative;overflow: hidden; box-sizing:border-box;}
+.content ul {    position: absolute; left: 0; top: 0;display: -webkit-box;  display: box; 	height: 300px;}
+.content ul li {width: 300px;height: 300px; text-align:center; font-size:30px;}
+</style>
+ 	
+
+<ul class="nav flexbox" id="j_tab_nav">
+      <li class="flex1">首页</li>
+      <li class="flex1">插件</li>
+      <li class="flex1">新闻</li>
+      <li class="flex1">其他</li>
+      <div id="j_line"></div>
+  </ul>
+
+<div class="content" id="j_tab_content">
+  <ul class="flexbox" id="j_tab_content_inner">
+  <li style="background:#ddd;" class="flex1">11</li>
+  <li style="background:blue;" class="flex1" >22</li>
+  <li style="background:green;" class="flex1">33</li>
+  <li style="background:#ddd;"  class="flex1">44444444444</li>
+  </ul>
+</div>
+
+<script>
+  var j_tab_nav=document.getElementById("j_tab_nav");
+  var j_tab_nav_li=j_tab_nav.getElementsByTagName("li");
+  var j_line=document.getElementById("j_line");
+  var j_tab_content=document.getElementById("j_tab_content");
+  var j_tab_content_inner=document.getElementById("j_tab_content_inner");
+  // function forEach(a, b) {return Array.prototype.forEach.call(a, b)}
+    
+  for(var i=0;i<j_tab_nav_li.length;i++) {
+	  j_tab_nav_li[i].index=i;
+	  j_tab_nav_li[i].onclick=function(){
+		  var that=this;
+		  var animateLine=(that.index)*j_line.offsetWidth+'px';
+		  var now=-(that.index)*j_tab_content.offsetWidth+'px';
+		      
+			  transform(j_line,{translate3d:''+animateLine+',0,0',})
+		     
+		      transform(j_tab_content_inner,{translate3d:''+now+',0,0',},'cubic-bezier(0.15, 0.5, 0.25, 1.0)')
+	  }//click end
+  }
+					
+</script>
+
+
+
+<!--3 内联 元素  开始有设置   transform 情况-->
+<div id="j_set_out"  style=" border:2px solid red; width:280px; height:300px; margin:100px auto 100px">
+    <div id="j_set_inner" style="-webkit-transform:translate3d(0,-100px,0);transform:translate3d(0,-100px,0); background:#333; height:200px; padding-top:100px; text-align:center; color:#fff"> <p>点击我 <br>开始  -webkit-transform:translate3d(0,-100px,0);</p></div>
+</div>
+
+
+<script> 
+    var j_set_inner=document.getElementById("j_set_inner");
+    var j_set_out=document.getElementById("j_set_out");
+	var falgs=true;
+     j_set_out.addEventListener("click",function(){
+		     
+			 if(falgs){
+			       transform(j_set_inner,{translate3d:'0,0,0'},'linear',function(){
+					this.innerHTML=this.style.cssText;
+					})
+					
+			 }else{
+				  transform(j_set_inner,{translate3d:'0px,-110px,0'},900,'linear',function(){
+					  this.innerHTML=this.style.cssText
+					})
+				 
+			 } 
+			 falgs=!falgs;
+		 });
+</script>
+
+</body>
+</html>
