@@ -1,13 +1,13 @@
 
 
-  transform\<h1\><br />  
+  transform<h1\><br />  
 ===================================  
   
- 移动端轻量动画函数 \<h2\><br />  
+ 移动端轻量动画函数 <h2\><br />  
 -----------------------------------  
 
     
-### 参数说明  \<h3\><br /> 
+### 参数说明  <h3\><br /> 
 
     
 ###  properties json(css3 属性)  或者 string(css3动画名称)<br /> 
@@ -30,14 +30,14 @@
  */ 
 <br /> 
   
- ###   example：
-  \<h4\><br /> 
-    var that=document.getElementById("element");
+### example：
+  <h4\><br /> 
+     var that=document.getElementById("element");
 <br /> 
 
-   var i=10;
+###  var i=10;
  properties为 json 类型 \<h2\><br /> 
-   var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
+    var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
 
   
 
@@ -58,10 +58,22 @@
   transform(that, json,600,'ease',1000*i)<br /> 
   transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;}) ;<br /> 
   transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i) ;<br /> 
-  transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},-100*i) ; ////css3 transition-delay 支持负数 直接进入到时间点 
+  transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},-100*i) ; ////css3 transition-delay 支持负数 直接进入到时间点
   
-<br /> <br />
-   properties为 keyframes \<h2\><br /> 
+<br /> <br /> 
+
+###  properties为 keyframes <h2\><br /> 
+
+@-webkit-keyframes keyframesName{<br /> 
+    0%{ -webkit-transform:translateX(0)}<br /> 
+    100%{-webkit-transform:translateX(180px); opacity: .3 }<br /> 
+} <br /> 
+@keyframes keyframesName{<br /> 
+    0%{ transform:translateX(0)} <br /> 
+    100%{transform:translateX(180px) ;opacity: .3}<br /> 
+}
+<br /> 
+
 	var keyframes='keyframesName'; <br /> 
 	transform(that, keyframes)<br /> 
 	transform(that, keyframes,'ease')<br /> 
@@ -80,5 +92,6 @@
 	transform(that, keyframes,600,'ease',1000*i)<br /> 
 	transform(that, keyframes,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;}) ;<br /> 
 	transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},1020*i) ;<br /> 
-	transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},-20*i) ; //css3 animation-delay 支持负数 直接进入到时间点 
-\<br />
+	transform(that, keyframes,600,function(){ this.innerHTML='结束回调'+this.innerHTML;},-20*i) ; //css3 animation-delay 支持负数 直接进入到时间点<br/> 
+<br/> 
+
