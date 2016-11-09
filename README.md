@@ -34,9 +34,10 @@
   <h4\><br /> 
      var that=document.getElementById("element");
 <br /> 
-
-###  var i=10;
- properties为 json 类型 <h2\><br /> 
+     var i=10;
+ 
+###  properties为 keyframes <h2\><br /> 
+   
     var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
 
   
