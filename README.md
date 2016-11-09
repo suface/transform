@@ -1,4 +1,4 @@
- transform 函数支持如下
+ transform 函数支持如下\<h1\><br />  
  
    properties json(css3 属性)  或者 string(css3动画名称)
    
@@ -20,8 +20,8 @@
  
  example：
  var that=document.getElementById("element");
- 
-json 类型
+ var i=10;
+  json 类型 \<h2\><br />  
  var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
 
   transform(that,json);
@@ -43,15 +43,17 @@ json 类型
   transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},1000*i) ;
   transform(that, json,600,'ease',function(){ this.innerHTML='结束回调'+this.innerHTML;},-100*i) ; ////css3 transition-delay 支持负数 直接进入到时间点
   
-  或者 string 类型
+  或者 string 类型 \<h2\><br />  
+
   @-webkit-keyframes keyframesName{
     0%{ -webkit-transform:translateX(0)}
     100%{-webkit-transform:translateX(180px); opacity: .3 }
-} 
+ } 
 @keyframes keyframesName{
     0%{ transform:translateX(0)}
     100%{transform:translateX(180px) ;opacity: .3}
 }
+
 
   var keyframes='keyframesName';
       transform(that, keyframes)
