@@ -1,16 +1,16 @@
 
 
-  transform<h1\><br />  
+  transform
 ===================================  
   
- 移动端轻量动画函数 <h2\><br />  
+ 移动端轻量动画函数 
 -----------------------------------  
 
     
-### 参数说明  <h3\><br /> 
+### 参数说明
 
     
-###  properties json(css3 属性)  或者 string(css3动画名称)<br /> 
+###  properties json(css3 属性)  或者 string(css3动画名称)
  
 /*properties json(css3 属性)  或者 string(css3动画名称)
 * transform(elem, properties)
@@ -31,12 +31,12 @@
 <br /> 
   
 ### example：
-  <h4\><br /> 
+  <br /> 
      var that=document.getElementById("element");
 <br /> 
      var i=10;
  
-###  properties为 json <h2\><br /> 
+###  properties为 json <br /> 
    
     var json={translate3d:'100px,10px,0',left:'1em',opacity:0.5,perspective:'400px', width:'200px', rotateY:'30deg'}
 
